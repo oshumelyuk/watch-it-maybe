@@ -24,7 +24,12 @@ export default new Router({
     {
       path: '/movies',
       name: 'movies',
-      component: () => import(/* webpackChunkName: "about" */ './views/Movies.vue'),
+      component: () => import('./views/Movies.vue'),
+    },
+    {
+      path: '/movies/:id',
+      name: 'movieDetails',
+      component: () => import('./views/MovieDetails.vue'),
     },
   ],
 });
