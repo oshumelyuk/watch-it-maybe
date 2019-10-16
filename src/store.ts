@@ -17,6 +17,7 @@ const store = new Vuex.Store<AppState>({
   mutations: {
     setAuthenticated: (state, username: string) => {
       state.user = new User(username);
+      cookies.remove('authn');
       cookies.set('authn', username);
     },
     setUnauthenticated: (state) => {

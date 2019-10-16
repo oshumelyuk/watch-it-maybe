@@ -38,7 +38,6 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import AuthApi from '../api/AuthApi';
-import { mapMutations } from 'vuex';
 import router from '../router';
 
 @Component
@@ -54,14 +53,15 @@ export default class LoginForm extends Vue {
       return false;
     }
     var api = new AuthApi();
+    let self = this;
     api.authenticate(this.username, this.password).then((isAuthN) => {
       if (isAuthN){
-        this.$store.commit("setAuthenticated", this.username);
-        this.router.push({ path: '/movies' });
+        self.$store.commit("setAuthenticated", self.username);
+        self.router.push({ path: '/movies' });
       } else {
-        this.error = 'Login or password is incorrect';
+        self.error = 'Login or password is incorrect';
       }
-    });
+    }).catch(e => { console.log(e)});
   }
 
   validateForm() {
