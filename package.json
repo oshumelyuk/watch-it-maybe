@@ -11,6 +11,7 @@
     "@mdi/font": "^4.5.95",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
+    "vue-cookies-ts": "^1.5.17",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
     "vuetify": "^2.1.0",
