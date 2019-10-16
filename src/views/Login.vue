@@ -1,6 +1,6 @@
 <template>
-  <div class="login">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="login">    
+    <LoginForm />
   </div>
 </template>
 
@@ -13,5 +13,5 @@ import LoginForm from '@/components/LoginForm.vue'; // @ is an alias to /src
     LoginForm,
   },
 })
-export default class Home extends Vue {}
+export default class Login extends Vue {}
 </script>
