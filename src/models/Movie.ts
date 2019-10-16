@@ -6,7 +6,7 @@ class Movie {
     public vote_average: number;
     public genre_ids: number[];
     public poster_path: string;
-    public popularity: number; 
+    public popularity: number;
     public vote_count: number;
     public video: boolean;
     public adult: boolean;
