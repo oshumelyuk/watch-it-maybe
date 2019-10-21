@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from './store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -22,5 +23,24 @@ export default new Router({
       name: 'movieDetails',
       component: () => import('./views/MovieDetails.vue'),
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/Login.vue'),
+    },
   ],
 });
+
+let entryUrl: string | undefined ;
+
+let _store = store;
+router.beforeEach((to, from, next) => {
+  if (!_store.getters.isAuthenticated && to.path !== '/login') {
+    entryUrl = to.path;
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+export default router;

@@ -1,6 +1,6 @@
 import MoviesResponse from '../models/MoviesResponse';
 
-class MovieRepository {
+class MovieApi  {
     private key: string = '614db58ae5511973fb1886827fa7f623';
     private baseUrl: string = 'https://api.themoviedb.org/3';
     private listMovieUrl: string = '/discover/movie';
@@ -20,4 +20,4 @@ class MovieRepository {
     }
 }
 
-export default MovieRepository;
+export default MovieApi;
